@@ -5,82 +5,39 @@
 
 
 {% block content %}
-<section class="projects-section">   
-    <h2>Projects</h2>
+<section class="projects-section">  
+    <h2 class="section-title">Add Project</h2>
+
+    {% if user.is_authenticated %}
+        <a class="btn" href="{% url 'project_new' %}">Add Project</a>
+    {% endif %}
 
     <div class="projects-list">
 
+    {% for project in projects %}
         <div class="project-card">
-            <a href="https://github.com/SPyd3rByt3/" target="blank">
-                <img src=" https://picsum.photos/100 " alt="Project image">
+            <a href="{{project.repository}}" target="blank"> 
+                <img src="{{project.image}}" alt="Project image"> 
 
-                <p>Project Name</p>
-                <p>Project Description: 
-                    Lorem ipsum dolor sit, amet consectetur!</p>
-                <p>YYYY</p>
+                <p>{{project.name}}</p>
+                <p>{{project.description}}</p>
+                <p>{{project.year}}</p>
 
                 <div class="skills-container">
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
+                    {% for skill in project.skills.all %}
+                    <label class="text-label">{{skill.name}}</label>
+                    {%endfor%}
                 </div>
             </a>
+
+            {% if user.is_authenticated %}
+            <div class="projects-controls">
+                <a class="btn" href="">Update</a>
+            </div>
+            {% endif %}
         </div> <!--end of the CARD-->
-
-        <div class="project-card">
-            <a href="https://github.com/SPyd3rByt3/" target="blank">
-                <img src=" https://picsum.photos/100 " alt="Project image">
-
-                <p>Project Name</p>
-                <p>Project Description: 
-                    Lorem ipsum dolor sit, amet consectetur!</p>
-                <p>YYYY</p>
-
-                <div class="skills-container">
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                </div>
-            </a>
-        </div> <!--end of the CARD-->
-
-        <div class="project-card">
-            <a href="https://github.com/SPyd3rByt3/" target="blank">
-                <img src=" https://picsum.photos/100 " alt="Project image">
-
-                <p>Project Name</p>
-                <p>Project Description: 
-                    Lorem ipsum dolor sit, amet consectetur!</p>
-                <p>YYYY</p>
-
-                <div class="skills-container">
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                </div>
-            </a>
-        </div> <!--end of the CARD-->
-        
-        <div class="project-card">
-            <a href="https://github.com/SPyd3rByt3/" target="blank">
-                <img src=" https://picsum.photos/100 " alt="Project image">
-
-                <p>Project Name</p>
-                <p>Project Description: 
-                    Lorem ipsum dolor sit, amet consectetur!</p>
-                <p>YYYY</p>
-
-                <div class="skills-container">
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                  <label class="text-label">Skill</label>
-                </div>
-            </a>
-        </div> <!--end of the CARD-->
+    {%endfor%}
+      
     </div>
 </section>
 {% endblock content %}

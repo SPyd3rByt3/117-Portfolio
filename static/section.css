@@ -56,6 +56,39 @@
 }
 
 
+/* CONTACT SECTION */
+.contact-section {
+    position: relative;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+/* .the-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 0;
+} */
+
+.the-gif {
+    width: 100%;
+    flex-grow: inherit;
+    flex-shrink: inherit;
+    margin: 0;
+    padding: 0;
+    border: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
 /* PROJECT SECTION */
 .projects-section {
     padding: 2rem;
@@ -76,7 +109,7 @@
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease;
-    background: white;
+    background-color: rgb(177, 100, 100);
     padding: 1rem;
 }
 
@@ -101,9 +134,35 @@
 }
 
 .skills-container .text-label {
-    background: var(--primary-color);
+    background: var(--accent-color);
     color: white;
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
     font-size: 0.8rem;
+}
+
+a p:nth-child(2) {
+    font-size: 1.3rem;
+    font-weight: boldest;
+    margin: 0.5rem
+}
+
+a p:nth-child(3) {
+    font-style: italic;
+}
+
+a p:nth-child(4) {
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    color: azure;
+}
+
+
+/* New Project Section */
+.new-project-section center {
+    background-color: var(--skill-color);
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,
+    0.1);
 }

@@ -14,6 +14,7 @@
     --bungee-font: "Bungee Tint", sans-serif;
     --lobster-font: "Lobster Two", sans-serif;
     --DM-font: "DM Sans", sans-serif;
+
 }
 
 .profile-section {
@@ -28,6 +29,13 @@
     height: auto; /* Maintain aspect ratio */
     border-radius: 50%; /* Make it circular */
     border: 2px solid var(--primary-color); /* Optional border */
+}
+
+.profile-photo:hover {
+    transform: scale(1.1); /* Zoom effect on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0
+    , 0.2); /* Add a subtle shadow */
+    opacity: 0.9; /* Reduce opacity on hover */
 }
 
 /* Reset styles */
